@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Random</title>
+  <meta charset="utf-8">
+  <link href="style.css" rel="stylesheet">
+ </head>
+ <body>
+  <div id="blockPage" class="block_page">
+    <nav>
+      <ul>
+        <li  v-on:click="redirectionRandom"><a href="#">Random number</a></a></li>
+        <li v-on:click="redirectionTimer"><a href="#">Chronomètre</a></li>
+        <li class="selected"><a href="#">Minuteurs</a></li>
+        <li v-on:click="redirectionTicTacToe"><a href="#">TIC TAC TOE</a></li>
+      </ul>
+    </nav> 
+    <minuteur></minuteur>
+    
+  </div>
+
+
+
+
+  <!-- Syript JS -->
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="minuteursComponent.js"></script>
+  <script src="script.js"></script>
+ </body>
+</html>

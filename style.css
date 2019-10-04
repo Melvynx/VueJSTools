@@ -1,0 +1,222 @@
+/*START body*/
+body{
+  background-color: rgb(39, 36, 36);
+  color: #E3E0E0;
+  font-family: Klee;
+}
+.block_page{
+  margin: auto;
+  width: 800px;
+}
+/*END body*/
+
+/*START nav*/
+nav {
+  border-bottom: 1px solid #E3E0E0;
+  margin-bottom: 20px;
+  padding-bottom: -10px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  
+}
+nav ul li {
+  border: 1px solid #E3E0E0;
+  border-radius: 3px;
+  list-style-type: none;
+  padding: 3px 5px 3px 5px;
+  transition-property: border, background-color, color;
+  transition-duration: 0.5s;
+  display: block;
+}
+nav ul li:hover{
+  border: 1px solid rgb(39, 36, 36);
+  background-color: #E3E0E0;
+}
+nav ul li a:hover{
+  color: rgb(39, 36, 36);
+  
+}
+nav ul li a {
+  color: #E3E0E0;
+  text-decoration: none;
+  display: block;
+}
+.selected{
+  text-decoration: underline;
+}
+/*END nav*/
+
+/*START randomNumer*/
+.randomBlock{
+  border: 1.5px solid #E3E0E0;
+  height: 400px;
+  width: 300px;
+  margin: auto;
+}
+h1{
+  text-align: center;
+  font-size: 28px;
+  margin: 5px;
+  padding: -10px;
+}
+.subtitle{
+  color: #979696;
+  text-align: center;
+  margin-top: -10px;
+}
+.labelNumber{
+  margin: auto;
+  display: block;
+}
+.inputNumer1{
+  margin: auto;
+}
+.inputNumber{
+  width: 50px;
+  font-size: 16px;
+  background-color: rgb(39, 36, 36);
+  color: #E3E0E0;
+  border: 1px solid #E3E0E0;
+  padding: 3px;
+  text-align: center;
+  font-family: Klee;
+  transition-property: background-color, color;
+  transition-duration: 0.5s;
+}
+.inputNumber:focus{
+  background-color: #E3E0E0;
+  color: rgb(39, 36, 36);
+}
+.align{
+  text-align: center;
+}
+.wrongNumber{
+  font-weight: bold;
+  color: #A20909;
+}
+.submitRandomizer{
+  width: auto;
+  border-radius: 2px;
+  transition-property: background-color, color;
+  transition-duration: 0.5s;
+  font-family: Klee;
+}
+.submitRandomizer:hover{
+  background-color: #E3E0E0;
+  color: rgb(39, 36, 36);
+  
+}
+.resultRandom {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 1000;
+  margin-top: 0px;
+}
+.newNumber{
+  text-decoration: underline;
+}
+.chargingNumber{
+  margin-top: 20px;
+  font-size: 40px;
+  color: rgb(138, 132, 132);
+}
+/*END randomNumber*/
+
+/*START timer*/
+.timerBlock{
+
+  border: 1.5px solid #E3E0E0;
+  min-height: 400px;
+  width: 300px;
+  margin: auto;
+}
+.itemTimer{
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+}
+.itemTimer h2, h3{
+  font-size: 60px;
+  margin-top: 5px;
+}
+.separation{
+  position: relative;
+  bottom: 5px;
+}
+.buttonStart{
+  padding: 1px 5px 1px 5px;
+  font-size: 25px;
+  width: 80px;
+  margin: 5px;
+  transition-property: background-color, color;
+  transition-duration: 0.5s;
+}
+.buttonStart:hover{
+  background-color: #E3E0E0;
+  color: rgb(39, 36, 36);
+}
+.inputOption{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+.tours{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid#E3E0E0;
+  height: 40px;
+  margin-top: -5px;
+}
+.timerTours{
+  text-align: right;
+}
+.info{
+  position: relative;
+  text-align: center;
+  margin: 0px;
+  margin-top: -10px;
+  color: rgb(39, 36, 36);
+}
+.start{
+  color: green;
+}
+.stop{
+  color: red;
+}
+.pause{
+  color: yellow;
+}
+/*END timer*/
+
+/*START minuteur*/
+.minuteurBlock{
+  border: 1.5px solid #E3E0E0;
+  height: 400px;
+  width: 300px;
+  margin: auto;
+}
+.timerGif{
+  width: 300px;
+}
+.tictactoeBlock{
+  border: 1.5px solid #E3E0E0;
+  height: 400px;
+  width: 300px;
+  margin: auto;
+}
+/*END minuteur*/
+
+/*START TIC TAC TOE*/
+.colonne{
+  display: flex;
+}
+.colonne img{
+  
+}
+.case{
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+}
