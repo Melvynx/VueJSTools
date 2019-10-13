@@ -7,14 +7,7 @@
  </head>
  <body>
   <div id="blockPage" class="block_page">
-    <nav>
-      <ul>
-        <li v-on:click="redirectionRandom"><a href="#">Random number</a></a></li>
-        <li v-on:click="redirectionTimer" v-on:click="redirectionTimer"><a href="#">Chronomètre</a></li>
-        <li v-on:click="redirectionMinuteur"><a href="#">Minuteurs</a></li>
-        <li class="selected"><a href="#">Minuteurs multiple</a></li>
-      </ul>
-    </nav> 
+    <navi></navi>
     <tictactoe></tictactoe>
     
   </div>
@@ -24,6 +17,7 @@
 
   <!-- Syript JS -->
   <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="nav.js"></script>
   <script src="tictactoeComponent.js"></script>
   <script src="script.js"></script>
  </body>

@@ -38,26 +38,10 @@ const findTheBiggestID = function (array) {
     const maxExistingId = Math.max(...array.map((item) => item.id));
     return Math.max(maxExistingId, 0) + 1;
 };
-const timerPage = "timer.html";
-const randomPage = "index.html";
-const minuteurPage = "minuteur.html";
-const tictactoePage = "tictactoe.html";
 const blockPage = new Vue({
     el: "#blockPage",
     data: {
     },
     methods: {
-        redirectionTimer() {
-            window.location.replace(timerPage);
-        },
-        redirectionRandom() {
-            window.location.replace(randomPage);
-        },
-        redirectionMinuteur() {
-            window.location.replace(minuteurPage);
-        },
-        redirectionTicTacToe() {
-            window.location.replace(tictactoePage);
-        }
     }
 })

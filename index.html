@@ -7,14 +7,7 @@
  </head>
  <body>
   <div id="blockPage" class="block_page">
-    <nav>
-      <ul>
-        <li class="selected"><a href="#">Random number</a></a></li>
-        <li v-on:click="redirectionTimer"><a href="#">Chronomètre</a></li>
-        <li v-on:click="redirectionMinuteur"><a href="#">Minuteurs</a></li>
-        <li v-on:click="redirectionTicTacToe"><a href="#">TIC TAC TOE</a></li>
-      </ul>
-    </nav> 
+    <navi></navi> 
     <random></random>
     <img src="boudin.gif" />
   </div>
@@ -24,6 +17,7 @@
 
   <!-- Syript JS -->
   <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="nav.js"></script>
   <script src="randomCompenent.js"></script>
   <script src="script.js"></script>
  </body>
