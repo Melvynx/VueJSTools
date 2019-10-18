@@ -2,9 +2,13 @@ Vue.component('randomword', {
   props: [''],
   data() {
     return {
-      words : ["banane", "pied", "frange","qoqasien perdu"],
+      words : [],
+      wordsRandoms : ["Didier", "pascal"],
+      
+      isAddingWord: true,
       valueAddWord: "",
       heightList: "50" + "px",
+      addingWord: true,
     }
   },
   methods: {
@@ -16,9 +20,7 @@ Vue.component('randomword', {
       x = this.words.length;
       console.log(x);
       for (let i=0; i < x; i++) {
-        console.log("--- "+this.words[i]+"---"+word);
         if (this.words[i] == word){
-          console.log("ok");
           this.words.splice(i, 1);
         }
       }
@@ -46,8 +48,16 @@ Vue.component('randomword', {
         console.log(this.heightList)
       }
     },
+    startRandomWord() {
+      randomArray = randomizArray(this.words);
+      this.wordsRandoms = randomArray;
+      this.isAddingWord = false;
+    },
     reset() {
-      this.words = ["banane", "pied", "frange","qoqasien perdu"];
+      this.words = ["tu", "as", "perdu","la tête", "?"];
+    },
+    turnOffListMode() {
+      this.isAddingWord = true;
     }
   },
     template: `
@@ -61,16 +71,29 @@ Vue.component('randomword', {
         </span>.
       </p>
       
-      <div class="listWord" v-bind:style="{ height : heightList }">
+      <div v-show="isAddingWord" class="listWord" v-bind:style="{ height : heightList }">
         <div v-for="word in words" class="forWord">
-          <p class="wordAlone" v-on:click="deleteWord(word)">{{ word }}<img src="crossWord.svg" class="svgCrossWord"></p>
+          <p class="wordAlone" v-on:click="deleteWord(word, words)">{{ word }}<img src="crossWord.svg" class="svgCrossWord"></p>
         </div>
       </div>
-      
-      <div class="addWord">
-        <input class="addWordText" type="text" v-model="valueAddWord" v-on:keyup="tryHeightList" v-on:keyup.enter="addWord" />
-        <input class="addWordSubmit" type="submit" value="Add" v-on:click="addWord" />
+      <div class="blockListWord" v-show="!isAddingWord">
+        <div class="randomWord">
+          <listrandom v-for="word in wordsRandoms" v-bind:word="word" v-bind:key="word.id">
+          </listrandom>
+          
+        </div>
+        <div class="blockButtonListWord">
+          <button v-on:click="turnOffListMode" class="buttonListWord">Modifier/Ajouter</button>
+          <button v-on:click="startRandomWord" class="buttonListWord">Randomiz again</button>
+        </div>
       </div>
-    </div>
+      <div class="blockAddWord" v-show="isAddingWord">
+        <div class="addWord">
+          <input class="addWordText" type="text" v-model="valueAddWord" v-on:keyup="tryHeightList" v-on:keyup.enter="addWord" />
+          <input class="addWordSubmit" type="submit" value="Add" v-on:click="addWord" />
+        </div>
+        <input class="startRandom" type="Submit" value="Randomizzzz" v-on:click="startRandomWord">
+        </div>
+      </div>
   `,
   })

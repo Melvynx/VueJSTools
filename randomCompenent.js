@@ -108,6 +108,7 @@ Vue.component('random', {
       setTimeout(() => {
         this.chargingNumber = false;
         this.resultRandom = getRandomInt(this.inputNumberTwo, this.inputNumberOne);
+        console.log(this.inputNumberOne+" et "+this.inputNumberTwo+" est égal ="+this.resultRandom);
         this.valueSubmitRandomiz = randomizText(valueSubmitRandomizText);
 
         //Feathure for add underline when randomiz

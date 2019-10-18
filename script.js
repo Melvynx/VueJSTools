@@ -6,13 +6,31 @@ function getRandomInt(max, min) {
   result = random + min;
   return result;
 }
+function getRandomIntOne(num) {
+  num++;
+  random = Math.floor(Math.random() * Math.floor(num));
+  
+  return random;
+}//a delete
+function randomizArray(array) {
+  let arrayCopie = [...array];
+  let answer =[];
+  let arrayLength = arrayCopie.length;
+  for (i = 1; i < arrayLength+1; i++) {
+    randomInt = getRandomIntOne(arrayCopie.length-1);
+    answer.push({ id : i, word : arrayCopie[randomInt]})
+    arrayCopie.splice(randomInt, 1);
+    console.log(randomInt +" = "+arrayCopie[randomInt])
+  } 
+  return answer;
+}
 function randomizText(string) {
   let arrayRandomized = string.split("");
-   let arrayFinish = [];
-   for (let i = 0; i <= arrayRandomized.length; i++) {
+    let arrayFinish = [];
+    for (let i = 0; i <= arrayRandomized.length; i++) {
     let rand = arrayRandomized[Math.floor(Math.random() * arrayRandomized.length)];
     arrayFinish.push(rand);
-   }
+    }
   return arrayFinish.join("");
 }
 const filtreWord = function (array, text) {
@@ -59,7 +77,7 @@ const findTheBiggestID = function (array) {
 const blockPage = new Vue({
   el: "#blockPage",
   data: {
-    words: [{id: 0, word: "banane"}],
+    words: [],
   },
   methods: {
   }

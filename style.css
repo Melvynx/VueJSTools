@@ -230,7 +230,7 @@ h1{
   width: 500px;
   margin: auto;
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 /*span*/
 .pRandomWordFirst{
@@ -312,13 +312,63 @@ h1{
   transition-duration: 0.5s;
 
 }
-.addWordSubmit:hover{
+.addWordSubmit:hover, .buttonListWord:hover{
   background-color: #b691ff;
   color: rgb(39, 36, 36);
 }
 .addWord{
   display: flex;
   position: absolute;
-  bottom: 5px;
+  bottom: 40px;
   width: 500px;
+}
+.startRandom{
+  background-color: rgb(39, 36, 36);
+  color: #b691ff;
+  position: absolute;
+  bottom: 10px;
+  border: 1px  solid #b691ff;
+  border-radius: 5px;
+  font-size: 20px;
+  height: 30px;
+  width: 150px;
+  right: 35%;
+  transition-property: border, background-color, color, font-weight;
+  transition-duration: 0.5s;
+}
+.startRandom:hover{
+  background-color: #b691ff;
+  color: rgb(39, 36, 36);
+  border: 1px solid #b691ff
+}
+.blockWord{
+  margin: 0px;
+  margin-bottom: 0px;
+  margin-top: -20px;
+  
+}
+.randomWord{
+  border: 1px solid #b691ff;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+.buttonListWord{
+  background-color: rgb(39, 36, 36);
+  color: #b691ff;
+  border: 1px solid #b691ff;
+  border-radius: 4px;
+  transition-property: border, background-color, color, font-weight;
+  transition-duration: 0.5s;
+  font-size: 16px;
+  padding: 5px;
+}
+.blockButtonListWord{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
 }
