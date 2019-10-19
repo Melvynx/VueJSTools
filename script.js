@@ -47,13 +47,20 @@ function twoNumberMaxSplit(string) {
   let stringFinish = arrayFinish.join("");
   return stringFinish;
 }
-function tryNewWord(word) {
+function tryNewWord(word, array) {
   wordL = word.length;
-  if (wordL <= 1) {
+  arrayL = array.length;
+  if (wordL < 1) {
     return false;
   }
   if (wordL >= 50) {
     return false;
+  }
+  for (let i = 0; i < arrayL; i++){
+    if (word == array[i]) {
+      console.log("Find same");
+      return false;
+    }
   }
   return true;
 }
