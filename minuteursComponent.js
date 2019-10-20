@@ -134,7 +134,7 @@ Vue.component('minuteur', {
         } else {
           this.minutes = minutes - 1;
         }
-       
+        
       }
       if (minutes < 0) {
         if (this.hours > 0) {

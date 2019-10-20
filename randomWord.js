@@ -3,7 +3,7 @@ Vue.component('randomword', {
   data() {
     return {
       words : [],
-      wordsRandoms : ["Didier", "pascal"],
+      wordsRandoms : [{id : 0, word: "didier"}],
       
       isAddingWord: true,
       valueAddWord: "",
@@ -13,6 +13,7 @@ Vue.component('randomword', {
       nextNum: 10,
       textInfoErreur: "Erreur",
       infoErreur: false,
+      transisRandomizerAgain: false,
     }
   }, 
   methods: {
@@ -54,12 +55,12 @@ Vue.component('randomword', {
       }
     },
     startRandomWord() {
-      if (this.words.length > 1) {
+      if (this.words.length > 1 && this.words.length < 1000) {
         randomArray = randomizArray(this.words);
         this.wordsRandoms = randomArray;
         this.isAddingWord = false;
       }else {
-        this.textInfoErreur = "On ne peut pas randomizer une seul et unique valeur !";
+        this.textInfoErreur = "On ne peut pas randomizer une seul et unique valeur !(ou rien :p)";
         this.infoErreur = true;
         setTimeout(() => {
           this.infoErreur = false;
@@ -73,15 +74,16 @@ Vue.component('randomword', {
     turnOffListMode() {
       this.isAddingWord = true;
     },
-    randomIndex: function () {
-      return Math.floor(Math.random() * this.items.length)
-    },
-    add: function () {
-      this.items.splice(this.randomIndex(), 0, this.nextNum++)
-    },
-    remove: function () {
-      this.items.splice(this.randomIndex(), 1)
-    },
+    randomizAgain() {
+      randomArray = randomizArray(this.words);
+      this.wordsRandoms = randomArray;
+
+      this.transisRandomizerAgain = true;
+      console.log(this.transisRandomizerAgain);
+      setTimeout(() => {
+        this.transisRandomizerAgain = false;
+      }, 500);
+    }
     
   },
     template: `
@@ -103,13 +105,15 @@ Vue.component('randomword', {
       </transition-group>
       </div>
       <div class="blockListWord" v-show="!isAddingWord">
-        <div class="randomWord" v-on:click="startRandomWord">
-          <listrandom v-for="word in wordsRandoms" v-bind:word="word" v-bind:key="word.id">
+        <div class="randomWord" v-on:click="randomizAgain">
+        <transition-group name="flip-list" tag="p">
+          <listrandom v-for="word in wordsRandoms" v-bind:word="word" v-bind:key="word.word">
           </listrandom>
+        </transition-group>
         </div>
         <div class="blockButtonListWord">
-          <button v-on:click="turnOffListMode" class="buttonListWord">Modifier/Ajouter</button>
-          <button v-on:click="startRandomWord" class="buttonListWord">Randomiz again</button>
+          <button v-on:click="turnOffListMode" class="buttonBackToAddWord">Modifier/Ajouter</button>
+          <button v-on:click="randomizAgain" v-bind:class="{ transitionDown : transisRandomizerAgain }" class="buttonListWord">Randomiz again</button>
         </div>
       </div>
       <div class="blockAddWord" v-show="isAddingWord">
@@ -123,7 +127,6 @@ Vue.component('randomword', {
         <input class="startRandom" type="Submit" value="Randomizzzz" v-on:click="startRandomWord">
         </div>
       </div>
-      
   `,
   })
   

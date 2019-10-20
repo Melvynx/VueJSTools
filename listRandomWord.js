@@ -4,25 +4,25 @@ Vue.component('listrandom', {
     return {
       styleWord: {
         color: "#b691ff",
-        fontSize: "18px",
+        fontSize: "25px",
       }
     }
   },
   methods: {
     styleWordFun() {
+      console.log("sos");
       if (this.word.id == 1) {
-        this.styleWord.color = "#ecef2e";        
-        this.styleWord.fontSize = "30px";        
+        this.styleWord.color = "#ecef2e";   
       }
       if (this.word.id == 2) {
         this.styleWord.color = "#efa92e";        
-        this.styleWord.fontSize = "26px";        
       }
       if (this.word.id == 3) {
         this.styleWord.color = "#f05b24";        
-        this.styleWord.fontSize = "22px";        
       }
-
+      if (this.word.id > 3) {
+        this.styleWord.color = "#b691ff";
+      }
     }
   },
     template: `

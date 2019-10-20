@@ -310,10 +310,6 @@ h1{
   transition-duration: 0.5s;
 
 }
-.addWordSubmit:hover, .buttonListWord:hover{
-  background-color: #b691ff;
-  color: rgb(39, 36, 36);
-}
 .addWord{
   display: flex;
   position: absolute;
@@ -363,14 +359,34 @@ h1{
   border-radius: 5px;
 }
 .buttonListWord{
+  background: linear-gradient(to left, rgb(39, 36, 36) 50%, #b691ff 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  color: #b691ff;
+  border: 1px solid #b691ff;
+  border-radius: 4px;
+  font-size: 16px;
+  transition:all .3s ease;
+  padding: 5px;
+}
+.transitionDown{
+  background: linear-gradient(to left, rgb(39, 36, 36) 50%, #b691ff 50%);
+  background-size: 200% 100%;
+  background-position:left bottom;
+  color: rgb(39, 36, 36);
+}
+.buttonBackToAddWord{
   background-color: rgb(39, 36, 36);
   color: #b691ff;
   border: 1px solid #b691ff;
   border-radius: 4px;
-  transition-property: border, background-color, color, font-weight;
-  transition-duration: 0.5s;
   font-size: 16px;
+  transition:all .5s ease;
   padding: 5px;
+}
+.addWordSubmit:hover, .buttonBackToAddWord:hover{
+  background-color: #b691ff;
+  color: rgb(39, 36, 36);
 }
 .blockButtonListWord{
   display: flex;
@@ -409,4 +425,27 @@ h1{
 }
 .flip-list-move {
   transition: transform 1s;
+}
+.flip-list-item {
+  transition: all 1s;
+  display: inline-block;
+}
+.flip-list-enter, .flip-list-leave-to
+/* .list-complete-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.flip-list-leave-active {
+  position: absolute;
+}
+.crossRotate {
+  outline: 0;
+  border: 1px solid red;
+  width: 100px;
+  transition:all 1s linear;
+  /* other styles... */
+}
+.crossRotate:active {
+  color: red;
+  background-color: red;
 }
