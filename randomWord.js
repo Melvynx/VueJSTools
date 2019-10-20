@@ -116,6 +116,14 @@ Vue.component('randomword', {
           <button v-on:click="turnOffListMode" class="buttonBackToAddWord">Modifier/Ajouter</button>
           <button v-on:click="randomizAgain" v-bind:class="{ transitionDown : transisRandomizerAgain }" class="buttonListWord">Randomiz again</button>
         </div>
+        <div class="blockButtonOneWord">
+          <div class="toggle">
+            <input type="checkbox" class="check">
+            <span class="b switch"></span>
+            <span class="b track"></span>
+          </div>
+          <p class="ParaToggleButton">Afficher uniquement le premier mot</p>
+        </div>
       </div>
       </transition>
       <div class="blockAddWord" v-show="isAddingWord">

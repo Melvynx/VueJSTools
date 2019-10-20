@@ -298,6 +298,7 @@ h1{
   padding: 3px;
   font-size: 18px;
   transition: all .5s ease;
+
 }
 .addWordText:focus{
   border-bottom: 1px solid #E3E0E0;
@@ -410,10 +411,10 @@ h1{
   opacity: 0;
   transform: translateX(30px);
 }
-.msgErreur-enter-active, .fade-leave-active {
+.msgErreur-enter-active, .msgErreur-leave-active {
   transition: all 1s;
 }
-.msgErreur-enter, .fade-leave-to/* .list-leave-active below version 2.1.8 */ {
+.msgErreur-enter, .msgErreur-leave-to/* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateX(300px);
 }
@@ -461,4 +462,72 @@ h1{
 .crossRotate:active {
   color: red;
   background-color: red;
+}
+.blockButtonOneWord{
+  position: relative;
+  top: 50px;
+  right: -50px;
+  display: flex;
+}
+.blockButtonOneWord p{
+  position: relative;
+  bottom: 33px;
+  left: 45px;
+  color: #b691ff;
+}
+.toggle{
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 35px;
+  background-color: rgb(39, 36, 36);
+  border: 0.5px solid #b691ff;
+  margin: -20px -40px;
+  box-shadow: inset 0 0 2px 1px rgb(39, 36, 36);
+}
+.check{
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 6;
+}
+.check:checked ~ .track{
+  box-shadow: inset 0 0 0 20px #b691ff;
+}
+.check:checked ~ .switch{
+  right: 2px;
+  left: 32px;
+  transition: .35s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  transition-property: left, right;
+  transition-delay: 0.05s, 0s;
+  background-color: rgb(39, 36, 36);
+}
+.switch{
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  right: 32px;
+  background-color: #b691ff;
+  border-radius: 36px;
+  z-index: 1;
+  transition: .35s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  transition-property: left, right;
+  transition-delay: 0, 0.05s;
+  box-shadow: 0 1px 2px #;
+}
+.track{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: .35s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.05);
+  border-radius: 40px;
 }
