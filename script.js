@@ -49,10 +49,10 @@ function twoNumberMaxSplit(string) {
 function tryNewWord(word, array) {
   wordL = word.length;
   arrayL = array.length;
-  if (wordL <= 1) {
+  if (wordL < 1) {
     return false;
   }
-  if (wordL >= 50) {
+  if (wordL > 50) {
     return false;
   }
   for (let i = 0; i < arrayL; i++){

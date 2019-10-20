@@ -219,6 +219,6 @@ Vue.component('minuteur', {
 
   </div>
   <img v-bind:src="timeImg" class="timerGif"/>
- </div>
- `,
+  </div>
+  `,
 })

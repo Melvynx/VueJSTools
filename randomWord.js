@@ -104,6 +104,7 @@ Vue.component('randomword', {
         </div>
       </transition-group>
       </div>
+      <transition name="fade">
       <div class="blockListWord" v-show="!isAddingWord">
         <div class="randomWord" v-on:click="randomizAgain">
         <transition-group name="flip-list" tag="p">
@@ -116,8 +117,9 @@ Vue.component('randomword', {
           <button v-on:click="randomizAgain" v-bind:class="{ transitionDown : transisRandomizerAgain }" class="buttonListWord">Randomiz again</button>
         </div>
       </div>
+      </transition>
       <div class="blockAddWord" v-show="isAddingWord">
-      <transition name="fade">
+      <transition name="msgErreur">
       <p class="infoErreur" v-if="infoErreur">{{ textInfoErreur }}</p>
       </transition>
         <div class="addWord">
