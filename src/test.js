@@ -9,8 +9,8 @@ Vue.component("randomword", {
   },
   methods: {
     taper() {
-      console.log(this.bitc)
-    }
+      console.log(this.bitc);
+    },
   },
   template: `
 <div class="randomWordBlock">
@@ -27,5 +27,5 @@ Vue.component("randomword", {
 
 
 </div>
-  `
+  `,
 });

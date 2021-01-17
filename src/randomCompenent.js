@@ -1,7 +1,7 @@
 let labelNumberOneText = "Number 1...";
 let labelNumberTwoText = "Number 2...";
 let valueSubmitRandomizText = "Randomized !";
-Vue.component('random', {
+Vue.component("random", {
   data() {
     return {
       inputNumberOne: 0,
@@ -15,17 +15,17 @@ Vue.component('random', {
       newNumber: false,
       chargingNumber: false,
       compteur0: 0,
-      compteur1: 1,      
+      compteur1: 1,
       resultCompteur0: "",
       resultCompteur1: "",
-    }
+    };
   },
   methods: {
     catchNumberOne() {
       if (this.inputNumberOne != "0" || this.inputNumberOne != " ") {
         this.inputNumberOnse = Number(this.inputNumberOne);
       }
-        
+
       one = Number(this.inputNumberOne);
       two = Number(this.inputNumberTwo);
       if (one > 1000) {
@@ -33,8 +33,8 @@ Vue.component('random', {
         this.labelNumberOne = "Maximume : 1000";
         this.wrongNumber = true;
         setTimeout(() => {
-        this.wrongNumber = false;
-        this.labelNumberOne = labelNumberOneText;
+          this.wrongNumber = false;
+          this.labelNumberOne = labelNumberOneText;
         }, 5000);
       }
       if (one < 0) {
@@ -42,21 +42,20 @@ Vue.component('random', {
         this.labelNumberOne = "Minimume : 0";
         this.wrongNumber = true;
         setTimeout(() => {
-        this.wrongNumber = false;
-        this.labelNumberOne = labelNumberOneText;
+          this.wrongNumber = false;
+          this.labelNumberOne = labelNumberOneText;
         }, 5000);
       }
       if (two <= one) {
-        
         this.inputNumberTwo = Number(this.inputNumberOne) + 1;
         this.labelNumberTwo = "Number 2 must be bigger Number 1.";
         this.wrongNumber2 = true;
         setTimeout(() => {
-        this.wrongNumber2 = false;
-        this.labelNumberTwo = labelNumberTwoText;
+          this.wrongNumber2 = false;
+          this.labelNumberTwo = labelNumberTwoText;
         }, 5000);
       }
-    }, 
+    },
     catchNumberTwo() {
       if (this.inputNumberTwo != "0" || this.inputNumberTwo != " ") {
         this.inputNumberTwo = Number(this.inputNumberTwo);
@@ -68,16 +67,16 @@ Vue.component('random', {
         this.labelNumberTwo = "Maximume : 1000";
         this.wrongNumber2 = true;
         setTimeout(() => {
-        this.wrongNumber2 = false;
-        this.labelNumberTwo = labelNumberTwoText;
+          this.wrongNumber2 = false;
+          this.labelNumberTwo = labelNumberTwoText;
         }, 5000);
       }
       if (two < one) {
         this.labelNumberTwo = "Number 2 must be bigger Number 1.";
         this.wrongNumber2 = true;
         setTimeout(() => {
-        this.wrongNumber2 = false;
-        this.labelNumberTwo = labelNumberTwoText;
+          this.wrongNumber2 = false;
+          this.labelNumberTwo = labelNumberTwoText;
         }, 5000);
       }
     },
@@ -90,25 +89,42 @@ Vue.component('random', {
       charge6 = getRandomInt(this.inputNumberTwo, this.inputNumberOne);
       charge7 = getRandomInt(this.inputNumberTwo, this.inputNumberOne);
       chargeString2 = ["##", "#ß", "¥ß", "§$", "#%", "%?"];
-      chargeString = [charge1, charge2, charge3, charge4, charge5, charge6, charge7];
+      chargeString = [
+        charge1,
+        charge2,
+        charge3,
+        charge4,
+        charge5,
+        charge6,
+        charge7,
+      ];
       this.chargingNumber = true;
-      for(let i = 0; i < chargeString.length; i++) {
+      for (let i = 0; i < chargeString.length; i++) {
         setTimeout(() => {
           this.resultRandom = chargeString[i];
-          console.log(chargeString[i])
+          console.log(chargeString[i]);
           if (chargeString[i] == 1) {
             this.resultCompteur1 = this.resultCompteur1 + "u";
-          } 
+          }
           if (chargeString[i] == 0) {
             this.resultCompteur0 = this.resultCompteur0 + "o";
           }
-        }, 10*(i*3));
+        }, 10 * (i * 3));
       }
-      console.log("---------")
+      console.log("---------");
       setTimeout(() => {
         this.chargingNumber = false;
-        this.resultRandom = getRandomInt(this.inputNumberTwo, this.inputNumberOne);
-        console.log(this.inputNumberOne+" et "+this.inputNumberTwo+" est égal ="+this.resultRandom);
+        this.resultRandom = getRandomInt(
+          this.inputNumberTwo,
+          this.inputNumberOne
+        );
+        console.log(
+          this.inputNumberOne +
+            " et " +
+            this.inputNumberTwo +
+            " est égal =" +
+            this.resultRandom
+        );
         this.valueSubmitRandomiz = randomizText(valueSubmitRandomizText);
 
         //Feathure for add underline when randomiz
@@ -117,14 +133,10 @@ Vue.component('random', {
           this.newNumber = false;
         }, 100);
       }, 260);
-
-      
     },
-    findNumber() { 
-
-    }
+    findNumber() {},
   },
-    template: `
+  template: `
     <div>
       <div class="randomBlock">
         <h1>Random Number</h1>
@@ -151,4 +163,4 @@ Vue.component('random', {
   
   
   `,
-})
+});

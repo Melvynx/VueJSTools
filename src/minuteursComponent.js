@@ -1,7 +1,7 @@
-Vue.component('minuteur', {
+Vue.component("minuteur", {
   data() {
     return {
-      ms : "00",
+      ms: "00",
       hours: "00",
       minutes: "01",
       secondes: "00",
@@ -11,204 +11,195 @@ Vue.component('minuteur', {
       showHours: true,
       showMinutes: true,
       showSecondes: true,
-      
+
       timerCountStart: false,
 
       valuePause: "Pause",
 
       startIsDo: false,
       timeImg: "",
-    }
+    };
   },
   methods: {
-  changeHours() {
-    if (!this.timerCountStart) {
-      this.showHours = false;
-      this.$nextTick(() => this.$refs.refHours.focus());
-    }
-  },
-  changeMinutes() {
-    if (!this.timerCountStart) {
-      this.showMinutes = false;
-      this.$nextTick(() => this.$refs.refMinutes.focus());
-    }
-  },
-  changeSecondes() {
-    if (!this.timerCountStart) {
-      this.showSecondes = false;
-      this.$nextTick(() => this.$refs.refSecondes.focus());
-    }
-  },
-  stopChange() {
-
-    this.showHours = true;
-    this.showMinutes = true;
-    this.showSecondes = true;
-
-    if (Number(this.minutes) > 60) {
-      this.minutes = 60;
-    } 
-    if (Number(this.secondes) > 60) {
-      this.secondes = 60;
-    } 
-  },
-  catchHours() {
-    if (this.hours != "0" || this.hours != " ") {
-      if (isNaN(this.hours)) {
-        this.hours = 00;
-      } else {
-      this.hours = Number(this.hours);
+    changeHours() {
+      if (!this.timerCountStart) {
+        this.showHours = false;
+        this.$nextTick(() => this.$refs.refHours.focus());
       }
-    }
-    if (this.hours.length >= 3 || this.hours > 99) {
-      console.log("salut")
-      this.hours = twoNumberMaxSplit(String(this.hours));
-    }
-    if (Number(this.hours) < 0) {
-      this.hours = 0;
-    }
-  },
-  catchMinutes() {
-    if (this.minutes != "0" || this.minutes != " ") {
-      if (isNaN(this.minutes)) {
-        this.minutes = 00;
-      } else {
-      this.minutes = Number(this.minutes);
+    },
+    changeMinutes() {
+      if (!this.timerCountStart) {
+        this.showMinutes = false;
+        this.$nextTick(() => this.$refs.refMinutes.focus());
       }
-    }
-    if (this.minutes.length >= 3 || this.minutes > 99) {
-      console.log("salut")
-      this.minutes = twoNumberMaxSplit(String(this.minutes));
-    }
-    if (Number(this.minutes) < 0) {
-      this.minutes = 0;
-    }
-  },
-  catchSecondes() {
-    if (this.secondes != "0" || this.secondes != " ") {
-      if (isNaN(this.secondes)) {
-        this.secondes = 00;
-      } else {
-      this.secondes = Number(this.secondes);
+    },
+    changeSecondes() {
+      if (!this.timerCountStart) {
+        this.showSecondes = false;
+        this.$nextTick(() => this.$refs.refSecondes.focus());
       }
-    }
-    if (this.secondes.length >= 3 || this.secondes > 99) {
-      console.log("salut")
-      this.secondes = twoNumberMaxSplit(String(this.secondes));
-    }
-    if (Number(this.secondes) < 0) {
-      this.secondes = 0;
-    }
-  },
-  startTimer() {
-    this.saveHours = Number(this.hours);
-    this.saveMinutes = Number(this.minutes);
-    this.saveSecondes = Number(this.secondes);
-    this.timerCountStart = true;
-    this.timerCount();
-    this.startIsDo = true;
-  },
-  timerCount(){
-    hours = Number(this.hours);
-    minutes = Number(this.minutes);
-    secondes = Number(this.secondes);
+    },
+    stopChange() {
+      this.showHours = true;
+      this.showMinutes = true;
+      this.showSecondes = true;
 
-    if (this.timerCountStart) {
-
-      if (this.ms >= 100) {
-        this.ms = 0;
-        if (secondes <= 10) {
-          secondes = secondes - 1;
-          this.secondes = "0" + secondes;
+      if (Number(this.minutes) > 60) {
+        this.minutes = 60;
+      }
+      if (Number(this.secondes) > 60) {
+        this.secondes = 60;
+      }
+    },
+    catchHours() {
+      if (this.hours != "0" || this.hours != " ") {
+        if (isNaN(this.hours)) {
+          this.hours = 00;
         } else {
-          this.secondes = this.secondes - 1;
+          this.hours = Number(this.hours);
         }
       }
-
-
-
-      if (secondes <= 0) {
-        console.log("secondes PLUS PETIT que 0")
-        this.secondes = 59;
-        secondes = 59;
-        if (minutes <= 10) {
-          minutes = minutes - 1;
-          this.minutes = "0" + minutes;
+      if (this.hours.length >= 3 || this.hours > 99) {
+        console.log("salut");
+        this.hours = twoNumberMaxSplit(String(this.hours));
+      }
+      if (Number(this.hours) < 0) {
+        this.hours = 0;
+      }
+    },
+    catchMinutes() {
+      if (this.minutes != "0" || this.minutes != " ") {
+        if (isNaN(this.minutes)) {
+          this.minutes = 00;
         } else {
-          this.minutes = minutes - 1;
+          this.minutes = Number(this.minutes);
         }
-        
       }
-      if (minutes < 0) {
-        if (this.hours > 0) {
-          this.minutes = 59;
+      if (this.minutes.length >= 3 || this.minutes > 99) {
+        console.log("salut");
+        this.minutes = twoNumberMaxSplit(String(this.minutes));
+      }
+      if (Number(this.minutes) < 0) {
+        this.minutes = 0;
+      }
+    },
+    catchSecondes() {
+      if (this.secondes != "0" || this.secondes != " ") {
+        if (isNaN(this.secondes)) {
+          this.secondes = 00;
         } else {
-          this.minutes = "00";
+          this.secondes = Number(this.secondes);
         }
-        this.hours = hours - 1;
-
       }
-      if (this.hours < 0) {
-
-        this.timerFinish();
+      if (this.secondes.length >= 3 || this.secondes > 99) {
+        console.log("salut");
+        this.secondes = twoNumberMaxSplit(String(this.secondes));
       }
-    
-      setTimeout(() => {
-        this.ms = Number(this.ms) + 1;
-        this.timerCount();
-      }, 9);
-    }
-  },
-  timerFinish(){
-    this.hours = "00";
-    this.minutes = "00";
+      if (Number(this.secondes) < 0) {
+        this.secondes = 0;
+      }
+    },
+    startTimer() {
+      this.saveHours = Number(this.hours);
+      this.saveMinutes = Number(this.minutes);
+      this.saveSecondes = Number(this.secondes);
+      this.timerCountStart = true;
+      this.timerCount();
+      this.startIsDo = true;
+    },
+    timerCount() {
+      hours = Number(this.hours);
+      minutes = Number(this.minutes);
+      secondes = Number(this.secondes);
 
-    this.secondes = "00";
-    
+      if (this.timerCountStart) {
+        if (this.ms >= 100) {
+          this.ms = 0;
+          if (secondes <= 10) {
+            secondes = secondes - 1;
+            this.secondes = "0" + secondes;
+          } else {
+            this.secondes = this.secondes - 1;
+          }
+        }
 
-    console.warn("finish");
-    this.timerCountStart = false;
+        if (secondes <= 0) {
+          console.log("secondes PLUS PETIT que 0");
+          this.secondes = 59;
+          secondes = 59;
+          if (minutes <= 10) {
+            minutes = minutes - 1;
+            this.minutes = "0" + minutes;
+          } else {
+            this.minutes = minutes - 1;
+          }
+        }
+        if (minutes < 0) {
+          if (this.hours > 0) {
+            this.minutes = 59;
+          } else {
+            this.minutes = "00";
+          }
+          this.hours = hours - 1;
+        }
+        if (this.hours < 0) {
+          this.timerFinish();
+        }
 
-    this.timeImg = "time.gif";
+        setTimeout(() => {
+          this.ms = Number(this.ms) + 1;
+          this.timerCount();
+        }, 9);
+      }
+    },
+    timerFinish() {
+      this.hours = "00";
+      this.minutes = "00";
 
-  },
-  pauseTimer() {
-    h = this.hours;
-    m = this.minutes;
-    s = this.secondes;
-    this.timerCountStart = !this.timerCountStart;
-    this.timerCount();
-    this.hours = h;
-    this.minutes = m;
-    this.secondes = s;
-    if (this.timerCountStart) {
-      this.valuePause = "Pause";
-    } else {
-      this.valuePause = "Play"
-    }
-  },
-  resetTimer() {
-    console.log("Reset ahahah :p")
-    this.timerCountStart = false;
-    
-    this.startIsDo = false;
-    this.timeImg = "";
-    if (this.saveSecondes <= 10) {
-      this.secondes = "0" + this.saveSecondes;
-    } else {
-      this.secondes = this.saveSecondes;
-    }
-    if (this.saveMinutes <= 10) {
-      this.minutes = "0" + this.saveMinutes;
-    } else {
-      this.minutes = this.saveMinutes;
-    }
-    if (this.saveHours <= 10) {
-      this.hours = "0" + this.saveHours;
-    } else {
-      this.hours = this.saveHours;
-    }
-  },
+      this.secondes = "00";
+
+      console.warn("finish");
+      this.timerCountStart = false;
+
+      this.timeImg = "time.gif";
+    },
+    pauseTimer() {
+      h = this.hours;
+      m = this.minutes;
+      s = this.secondes;
+      this.timerCountStart = !this.timerCountStart;
+      this.timerCount();
+      this.hours = h;
+      this.minutes = m;
+      this.secondes = s;
+      if (this.timerCountStart) {
+        this.valuePause = "Pause";
+      } else {
+        this.valuePause = "Play";
+      }
+    },
+    resetTimer() {
+      console.log("Reset ahahah :p");
+      this.timerCountStart = false;
+
+      this.startIsDo = false;
+      this.timeImg = "";
+      if (this.saveSecondes <= 10) {
+        this.secondes = "0" + this.saveSecondes;
+      } else {
+        this.secondes = this.saveSecondes;
+      }
+      if (this.saveMinutes <= 10) {
+        this.minutes = "0" + this.saveMinutes;
+      } else {
+        this.minutes = this.saveMinutes;
+      }
+      if (this.saveHours <= 10) {
+        this.hours = "0" + this.saveHours;
+      } else {
+        this.hours = this.saveHours;
+      }
+    },
   },
   template: `
   <div class="minuteurBlock">
@@ -236,4 +227,4 @@ Vue.component('minuteur', {
   <img v-bind:src="timeImg" class="timerGif"/>
   </div>
   `,
-})
+});

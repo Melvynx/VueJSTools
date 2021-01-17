@@ -15,11 +15,6 @@ const navDatas = [
     href: "minuteur.html",
   },
   {
-    name: "Tic Tac Toe",
-    isSelected: false,
-    href: "tictactoe.html",
-  },
-  {
     name: "Random word",
     isSelected: false,
     href: "randomWord.html",
