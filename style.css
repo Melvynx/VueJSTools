@@ -1,10 +1,10 @@
 /*START body*/
-body{
+body {
   background-color: rgb(39, 36, 36);
-  color: #E3E0E0;
+  color: #e3e0e0;
   font-family: Klee;
 }
-.block_page{
+.block_page {
   margin: auto;
   width: 800px;
 }
@@ -12,17 +12,16 @@ body{
 
 /*START nav*/
 nav {
-  border-bottom: 1px solid #E3E0E0;
+  border-bottom: 1px solid #e3e0e0;
   margin-bottom: 20px;
   padding-bottom: -10px;
 }
 nav ul {
   display: flex;
   justify-content: space-around;
-  
 }
 nav ul li {
-  border: 1px solid #E3E0E0;
+  border: 1px solid #e3e0e0;
   border-radius: 3px;
   list-style-type: none;
   padding: 3px 5px 3px 5px;
@@ -30,83 +29,81 @@ nav ul li {
   transition-duration: 0.5s;
   display: block;
 }
-nav ul li:hover{
+nav ul li:hover {
   border: 1px solid rgb(39, 36, 36);
-  background-color: #E3E0E0;
+  background-color: #e3e0e0;
 }
-nav ul li a:hover{
+nav ul li a:hover {
   color: rgb(39, 36, 36);
-  
 }
 nav ul li a {
-  color: #E3E0E0;
+  color: #e3e0e0;
   text-decoration: none;
   display: block;
 }
-.selected{
+.selected {
   text-decoration: underline;
 }
 /*END nav*/
 
 /*START randomNumer*/
-.randomBlock{
-  border: 1.5px solid #E3E0E0;
+.randomBlock {
+  border: 1.5px solid #e3e0e0;
   height: 400px;
   width: 300px;
   margin: auto;
 }
-h1{
+h1 {
   text-align: center;
   font-size: 28px;
   margin: 5px;
   padding: -10px;
 }
-.subtitle{
+.subtitle {
   color: #979696;
   text-align: center;
   margin-top: -10px;
 }
-.labelNumber{
+.labelNumber {
   margin: auto;
   display: block;
 }
-.inputNumer1{
+.inputNumer1 {
   margin: auto;
 }
-.inputNumber{
+.inputNumber {
   width: 50px;
   font-size: 16px;
   background-color: rgb(39, 36, 36);
-  color: #E3E0E0;
-  border: 1px solid #E3E0E0;
+  color: #e3e0e0;
+  border: 1px solid #e3e0e0;
   padding: 3px;
   text-align: center;
   font-family: Klee;
   transition-property: background-color, color;
   transition-duration: 0.5s;
 }
-.inputNumber:focus{
-  background-color: #E3E0E0;
+.inputNumber:focus {
+  background-color: #e3e0e0;
   color: rgb(39, 36, 36);
 }
-.align{
+.align {
   text-align: center;
 }
-.wrongNumber{
+.wrongNumber {
   font-weight: bold;
-  color: #A20909;
+  color: #a20909;
 }
-.submitRandomizer{
+.submitRandomizer {
   width: auto;
   border-radius: 2px;
   transition-property: background-color, color;
   transition-duration: 0.5s;
   font-family: Klee;
 }
-.submitRandomizer:hover{
-  background-color: #E3E0E0;
+.submitRandomizer:hover {
+  background-color: #e3e0e0;
   color: rgb(39, 36, 36);
-  
 }
 .resultRandom {
   text-align: center;
@@ -114,10 +111,10 @@ h1{
   font-weight: 1000;
   margin-top: 0px;
 }
-.newNumber{
+.newNumber {
   text-decoration: underline;
 }
-.chargingNumber{
+.chargingNumber {
   margin-top: 20px;
   font-size: 40px;
   color: rgb(138, 132, 132);
@@ -125,27 +122,27 @@ h1{
 /*END randomNumber*/
 
 /*START timer*/
-.timerBlock{
-
-  border: 1.5px solid #E3E0E0;
+.timerBlock {
+  border: 1.5px solid #e3e0e0;
   min-height: 400px;
   width: 300px;
   margin: auto;
 }
-.itemTimer{
+.itemTimer {
   display: flex;
   justify-content: space-evenly;
   height: 100px;
 }
-.itemTimer h2, h3{
+.itemTimer h2,
+h3 {
   font-size: 60px;
   margin-top: 5px;
 }
-.separation{
+.separation {
   position: relative;
   bottom: 5px;
 }
-.buttonStart{
+.buttonStart {
   padding: 1px 5px 1px 5px;
   font-size: 25px;
   width: 80px;
@@ -153,55 +150,55 @@ h1{
   transition-property: background-color, color;
   transition-duration: 0.5s;
 }
-.buttonStart:hover{
-  background-color: #E3E0E0;
+.buttonStart:hover {
+  background-color: #e3e0e0;
   color: rgb(39, 36, 36);
 }
-.inputOption{
+.inputOption {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 30px;
 }
-.tours{
+.tours {
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid#E3E0E0;
   height: 40px;
   margin-top: -5px;
 }
-.timerTours{
+.timerTours {
   text-align: right;
 }
-.info{
+.info {
   position: relative;
   text-align: center;
   margin: 0px;
   margin-top: -10px;
   color: rgb(39, 36, 36);
 }
-.start{
+.start {
   color: green;
 }
-.stop{
+.stop {
   color: red;
 }
-.pause{
+.pause {
   color: yellow;
 }
 /*END timer*/
 
 /*START minuteur*/
-.minuteurBlock{
-  border: 1.5px solid #E3E0E0;
+.minuteurBlock {
+  border: 1.5px solid #e3e0e0;
   height: 400px;
   width: 300px;
   margin: auto;
 }
-.timerGif{
+.timerGif {
   width: 300px;
 }
-.tictactoeBlock{
-  border: 1.5px solid #E3E0E0;
+.tictactoeBlock {
+  border: 1.5px solid #e3e0e0;
   height: 400px;
   width: 300px;
   margin: auto;
@@ -209,14 +206,328 @@ h1{
 /*END minuteur*/
 
 /*START TIC TAC TOE*/
-.colonne{
+.colonne {
   display: flex;
 }
-.colonne img{
-  
-}
-.case{
+.case {
   width: 100px;
   height: 100px;
   border: 1px solid red;
+}
+/*END TIC TAC TOE*/
+
+/*START TIC TAC TOE*/
+
+.randomWordBlock {
+  border: 1.5px solid #e3e0e0;
+  min-height: 400px;
+  width: 500px;
+  margin: auto;
+  position: relative;
+  padding-bottom: 100px;
+}
+/*span*/
+.pRandomWordFirst {
+  border-bottom: 1px solid #e3e0e0;
+  font-size: 20px;
+}
+.pRandomWord {
+  text-align: center;
+}
+.forWord,
+.listWord {
+  display: flex;
+}
+.listWord {
+  min-height: 10px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.forWord {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 20px;
+  margin-bottom: 20px;
+}
+.buttonWord {
+  height: 15px;
+  width: 15px;
+}
+.wordAlone {
+  min-height: 20px;
+  margin: 0px;
+  margin-bottom: 40px;
+  border: 1.7px solid #b691ff;
+  border-radius: 4px;
+  padding: 5px;
+  padding-top: 0px;
+  padding-right: 15px;
+  color: #b691ff;
+  position: relative;
+  transition-property: border, background-color, color, font-weight;
+  transition-duration: 0.5s;
+}
+.wordAlone:hover > .svgCrossWord {
+  display: inline;
+}
+.wordAlone:hover {
+  border: 1.7px solid #b691ff;
+  color: rgb(39, 36, 36);
+  background-color: #b691ff;
+  font-weight: bold;
+}
+.svgCrossWord {
+  display: none;
+  width: 10px;
+  position: absolute;
+  top: 9px;
+  right: 3px;
+  transition-property: display;
+  transition-duration: 0.5s;
+}
+.addWordText {
+  background-color: rgb(39, 36, 36);
+  border: none;
+  border-bottom: 1px solid #b691ff;
+  width: 90%;
+  color: #b691ff;
+  margin: 5px;
+  padding: 3px;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+.addWordText:focus {
+  border-bottom: 1px solid #e3e0e0;
+}
+.addWordSubmit {
+  background-color: rgb(39, 36, 36);
+  color: #b691ff;
+  border: 1px solid #b691ff;
+  width: 9%;
+  margin-right: 2px;
+  height: 30px;
+  border-radius: 4px;
+  transition-property: border, background-color, color, font-weight;
+  transition-duration: 0.5s;
+}
+.addWord {
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  width: 500px;
+}
+.infoErreur {
+  position: absolute;
+  bottom: 70px;
+  text-align: center;
+  width: 100%;
+  color: #a20909;
+}
+.startRandom {
+  background-color: rgb(39, 36, 36);
+  color: #b691ff;
+  position: absolute;
+  bottom: 10px;
+  border: 1px solid #b691ff;
+  border-radius: 5px;
+  font-size: 20px;
+  height: 30px;
+  width: 150px;
+  right: 35%;
+  transition-property: border, background-color, color, font-weight;
+  transition-duration: 0.5s;
+}
+.startRandom:hover {
+  background-color: #b691ff;
+  color: rgb(39, 36, 36);
+  border: 1px solid #b691ff;
+}
+.blockWord {
+  margin: 0px;
+  margin-bottom: 0px;
+  margin-top: -20px;
+}
+.randomWord {
+  border: 1px solid #b691ff;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+.buttonListWord {
+  background: linear-gradient(to left, rgb(39, 36, 36) 50%, #b691ff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  color: #b691ff;
+  border: 1px solid #b691ff;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 5px;
+}
+.buttonListWord:hover {
+  text-decoration: double;
+}
+.transitionDown {
+  background: linear-gradient(to left, rgb(39, 36, 36) 50%, #b691ff 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  color: rgb(39, 36, 36);
+}
+.buttonBackToAddWord {
+  background-color: rgb(39, 36, 36);
+  color: #b691ff;
+  border: 1px solid #b691ff;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.5s ease;
+  padding: 5px;
+}
+.addWordSubmit:hover,
+.buttonBackToAddWord:hover {
+  background-color: #b691ff;
+  color: rgb(39, 36, 36);
+}
+.blockButtonListWord {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+.list-word {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to/* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.msgErreur-enter-active,
+.msgErreur-leave-active {
+  transition: all 1s;
+}
+.msgErreur-enter, .msgErreur-leave-to/* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(300px);
+}
+.list-complete-item {
+  transition: all 1s;
+  display: inline-block;
+}
+.list-complete-enter, .list-complete-leave-to
+/* .list-complete-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.list-complete-leave-active {
+  position: absolute;
+}
+.flip-list-move {
+  transition: transform 1s;
+}
+.flip-list-item {
+  transition: all 1s;
+  display: inline-block;
+}
+.flip-list-enter, .flip-list-leave-to
+/* .list-complete-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.flip-list-leave-active {
+  position: absolute;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 1s;
+}
+.fade-enter, .fade-leave-to/* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.crossRotate {
+  outline: 0;
+  border: 1px solid red;
+  width: 100px;
+  transition: all 1s linear;
+  /* other styles... */
+}
+.crossRotate:active {
+  color: red;
+  background-color: red;
+}
+.blockButtonOneWord {
+  position: relative;
+  top: 50px;
+  right: -50px;
+  display: flex;
+}
+.blockButtonOneWord p {
+  position: relative;
+  bottom: 33px;
+  left: 45px;
+  color: #b691ff;
+}
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 35px;
+  background-color: rgb(39, 36, 36);
+  border: 0.5px solid #b691ff;
+  margin: -20px -40px;
+  box-shadow: inset 0 0 2px 1px rgb(39, 36, 36);
+}
+.check {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 6;
+}
+.check:checked ~ .track {
+  box-shadow: inset 0 0 0 20px #b691ff;
+}
+.check:checked ~ .switch {
+  right: 2px;
+  left: 32px;
+  transition: 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-property: left, right;
+  transition-delay: 0.05s, 0s;
+  background-color: rgb(39, 36, 36);
+}
+.switch {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  right: 32px;
+  background-color: #b691ff;
+  border-radius: 36px;
+  z-index: 1;
+  transition: 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-property: left, right;
+  transition-delay: 0, 0.05s;
+  box-shadow: 0 1px 2px #;
+}
+.track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.05);
+  border-radius: 40px;
 }
